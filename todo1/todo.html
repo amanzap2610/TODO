@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO APP</title>
+</head>
+<body>
+<label>Title :</label>
+<input  id="title" type="text" placeholder="Save your title" /><br>
+<br>
+<br>
+<label>Notes :</label>
+<input  id="Notes" type="text" name="message" placeholder="your task"><br>
+<br>
+
+<label >Your Task : </label>
+<ol  id = "task">
+
+</ol>
+<br>
+<br>
+<button type = "submit" onClick="showOutput();listAppend();storeTitle()">ADD </button>
+<br>
+<br>
+<br>
+<button type = "button"  onClick="titleclick()">SAVE </button>
+</body>
+<script>
+    function storeTitle()
+    {
+        var a = document.getElementById("title").value;
+    };
+    function showOutput()
+    {
+        //document.getElementById("task").innerHTML=document.getElementById("Notes").value;
+        change(document.getElementById("Notes").value);
+        storeTitle(document.getElementById("title").value);
+
+    }  
+    function change(val) {
+
+var x=document.getElementById('task');
+newLI = document.createElement("li");
+
+newText = document.createTextNode(val);
+newLI.appendChild(newText);
+x.appendChild(newLI);
+} 
+    var clicks = 0;
+    //counter  to count click
+        function titleclick() {
+             clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+         };
+        </script>
+
+</html>
